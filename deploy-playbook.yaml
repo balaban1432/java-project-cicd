@@ -9,7 +9,7 @@
     ansible.builtin.command: docker rm webapp-server
 
   - name: remove image
-    ansible.builtin.command: docker image rm balaban/webapp-b-${BUILD_NUMBER}:latest
+    ansible.builtin.command: docker image rm balaban/webapp:latest
 
   - name: create container  
-    ansible.builtin.command: docker run -d --name webapp-server -p 8080:8080 balaban/webapp-b-${BUILD_NUMBER}:latest
+    ansible.builtin.command: docker run -d --name webapp-server -p 8080:8080 balaban/webapp:latest

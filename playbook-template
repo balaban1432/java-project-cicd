@@ -1,7 +1,0 @@
-- hosts: ansibleserver
-  tasks:
-  - name: create docker image
-    ansible.builtin.command: docker build -t balaban/webapp-b-${BUILD_NUMBER}:latest .
-
-  - name: push docker image    
-    ansible.builtin.command: docker push balaban/webapp-b-${BUILD_NUMBER}:latest
