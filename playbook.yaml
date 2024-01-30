@@ -1,0 +1,10 @@
+- hosts: ansibleserver
+  tasks:
+  - name: create docker image
+    ansible.builtin.command: docker build -t webapp:latest .
+
+  - name: create tag to push image onto docker
+    ansible.builtin.command: docker tag webapp:latest balaban/webapp:latest
+
+  - name: push docker image    
+    ansible.builtin.command: docker push balaban/webapp:latest
